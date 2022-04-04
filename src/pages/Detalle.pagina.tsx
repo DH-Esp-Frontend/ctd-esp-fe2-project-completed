@@ -4,7 +4,7 @@
  * Uso:
  * ``` <PaginaDetalle /> ```
  *
- * @returns la pagina de inicio
+ * @returns la pagina de detalle
  */
 const PaginaDetalle = () => (
   <div>
