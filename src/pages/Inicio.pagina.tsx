@@ -1,3 +1,5 @@
+import { Title } from '../styles';
+
 /**
  * Esta es la pagina principal.
  *
@@ -8,7 +10,7 @@
  */
 const PaginaInicio = () => (
   <div>
-    <h3>Pagina de Inicio</h3>
+    <Title>Pagina de Inicio</Title>
   </div>
 );
 
