@@ -5,12 +5,14 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import PaginaDetalle from './pages/Detalle.pagina';
 import PaginaInicio from './pages/Inicio.pagina';
+import Navbar from 'components/Navbar';
 
 function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        <Navbar />
         <Routes>
           <Route path="/" element={<PaginaInicio />} />
           <Route path="detalle" element={<PaginaDetalle />} />
