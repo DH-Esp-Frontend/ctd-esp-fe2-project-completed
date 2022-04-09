@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// componente general para hacer container. Display y flex direction por props
+// componente general para hacer container. Recibe estilos por props
 
 interface IConteiner {
   display: string;
