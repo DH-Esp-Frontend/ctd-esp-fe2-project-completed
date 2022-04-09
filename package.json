@@ -7,6 +7,7 @@
     "@reduxjs/toolkit": "^1.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
@@ -16,7 +17,6 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.24",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/react-hooks": "^7.0.2",
@@ -25,7 +25,9 @@
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
+    "@types/react-icons": "^3.0.0",
     "@types/react-redux": "^7.1.23",
+    "@types/styled-components": "^5.1.24",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.0",
