@@ -7,6 +7,9 @@ import LinkStyled from './link.styles';
 import Container from './container.styles';
 import SearchBox from './search-box.styles';
 import IconButton from './icon-button.styles';
+import MobileNav from './mobile-nav.styles';
+import Nav from './nav-container.styles';
+import NavLinks from './nav-links.styles';
 
 export {
   theme,
@@ -17,7 +20,10 @@ export {
   IconButton,
   SearchBox,
   Container,
-  LinkStyled
+  LinkStyled,
+  MobileNav,
+  Nav,
+  NavLinks
 };
 
 // IconButton y Container componentes reutilizables
