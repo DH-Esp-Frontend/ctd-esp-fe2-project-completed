@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // componente general para hacer container. Recibe estilos por props
 
-export interface IConteiner {
+export interface IContainer {
   display?: string;
   justifyContent?: string;
   flexDirecction?: string;
@@ -12,8 +12,8 @@ export interface IConteiner {
   active?: boolean;
 }
 
-const Container = styled.div<IConteiner>`
-  width: ${(props) => props.width || '100vw'};
+const Container = styled.div<IContainer>`
+  width: ${(props) => props.width || '100%'};
   display: ${(props) => props.display || 'flex'};
   justify-content: ${(props) => props.justifyContent || 'space-around'};
   flex-direction: ${(props) => props.flexDirecction || 'row'};

@@ -5,7 +5,7 @@ interface INavLink {
   active?: string;
 }
 
-const LinkStyled = styled(NavLink)<INavLink>`
+const NavLinks = styled(NavLink)<INavLink>`
   text-decoration: none;
   color: #333333;
   transition: all 0.8s ease;
@@ -17,4 +17,4 @@ const LinkStyled = styled(NavLink)<INavLink>`
   }
 `;
 
-export default LinkStyled;
+export default NavLinks;

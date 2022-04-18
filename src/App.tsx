@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import PaginaDetalle from './pages/Detalle.pagina';
 import PaginaInicio from './pages/Inicio.pagina';
-import Navbar from 'components/Navbar';
+import Navbar from 'features/Navigation/Navbar';
 
 function App() {
   return (

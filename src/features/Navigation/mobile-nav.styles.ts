@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Container from './container.styles';
+import Container from '../../styles/container.styles';
 
 const MobileNav = styled(Container)`
   flex-direction: ${(props) => props.active && 'column'};
