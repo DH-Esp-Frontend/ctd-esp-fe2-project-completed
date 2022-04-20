@@ -1,4 +1,4 @@
-import { Title } from '../styles';
+import { Title } from '../features/styles';
 
 /**
  * Esta es la pagina principal.

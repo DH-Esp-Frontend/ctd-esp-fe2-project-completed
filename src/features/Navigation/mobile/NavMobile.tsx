@@ -1,11 +1,10 @@
-import { useState } from 'react';
-import SearchBar from 'features/Search/SearchBar';
-import icon from '../../assets/logo-dh.png';
-import { Container, IconButton, Logo } from 'styles';
-import MobileNav from './mobile-nav.styles';
-import NavLinks from './nav-link.styles';
+// import icon from '../../assets/logo-dh.png';
+import MobileNav from 'features/navigation/mobile/mobile-nav.styles';
+import NavLinks from 'features/navigation/nav-link.styles';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import useDisclosure from './useDisclosure';
+import useDisclosure from 'features/modal/useDisclosure';
+import { SearchBar } from 'features/search';
+import { Container, IconButton, Logo } from 'features/styles';
 
 const NavMobile = () => {
   const { isOpen, onOpen } = useDisclosure();
@@ -14,7 +13,7 @@ const NavMobile = () => {
     <MobileNav active={isOpen}>
       <Container>
         <NavLinks to="/">
-          <Logo src={icon} />
+          <Logo src={''} />
         </NavLinks>
         <IconButton onClick={onOpen}>{isOpen ? <FaTimes /> : <FaBars />}</IconButton>
       </Container>
