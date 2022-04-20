@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 
-import { Container } from 'styles';
+import { Container } from '../../styles';
 import NavDesktop from './NavDesktop';
 import NavMobile from './NavMobile';
 

@@ -1,5 +1,5 @@
 import { FaSearch } from 'react-icons/fa';
-import { IconButton } from 'styles';
+import { IconButton } from '../../styles';
 import SearchBox from './search-box.styles';
 import SearchInput from './search-input.styles';
 

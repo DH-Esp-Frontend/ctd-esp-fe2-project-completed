@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import SearchBar from 'features/Search/SearchBar';
-import icon from '../../assets/logo-dh.png';
-import { Container, IconButton, Logo } from 'styles';
+import SearchBar from '../Search/SearchBar';
+// import icon from '../../assets/logo-dh.png';
+import { Container, IconButton, Logo } from '../../styles';
 import MobileNav from './mobile-nav.styles';
 import NavLinks from './nav-link.styles';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -14,7 +13,7 @@ const NavMobile = () => {
     <MobileNav active={isOpen}>
       <Container>
         <NavLinks to="/">
-          <Logo src={icon} />
+          <Logo src={''} />
         </NavLinks>
         <IconButton onClick={onOpen}>{isOpen ? <FaTimes /> : <FaBars />}</IconButton>
       </Container>
