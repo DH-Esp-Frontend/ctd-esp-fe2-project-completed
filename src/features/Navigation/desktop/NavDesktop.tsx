@@ -1,14 +1,13 @@
-import SearchBar from '../Search/SearchBar';
-// import icon from '../../assets/logo-dh.png';
-import { Container, Logo } from '../../styles';
-import Nav from './nav-container.styles';
-import NavLinks from './nav-link.styles';
+import SearchBar from 'features/search/SearchBar';
+import { Container, Logo } from 'features/styles';
+import Nav from 'features/navigation/nav-container.styles';
+import NavLinks from 'features/navigation/nav-link.styles';
 
 const NavDesktop = () => (
   <Nav justifyContent="space-between">
     <Container width="400px">
       <NavLinks to="/">
-        <Logo src={''} />
+        <Logo src={'/images/logo-dh.png'} alt={'Digital House'} />
       </NavLinks>
       <NavLinks to="/about" active="active">
         <h3>About</h3>
