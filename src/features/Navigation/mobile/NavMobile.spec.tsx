@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import { NavDesktop } from 'features/navigation/desktop/index';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import NavMobile from './NavMobile';
 
 const mockSearchBar = jest.fn();
 jest.mock('features/search', () => ({
@@ -10,19 +10,25 @@ jest.mock('features/search', () => ({
   })
 }));
 
-describe('NavDesktop', () => {
+describe('NavMobile', () => {
   describe('when render default state', () => {
-    it('should have a list of pages and the SearchBar', async () => {
+    beforeEach(() => {
       render(
         <MemoryRouter initialEntries={[{ pathname: '/' }]}>
-          <NavDesktop />
+          <NavMobile />
         </MemoryRouter>
       );
-      //
+    });
+    it('should render only the logo and the menu button', async () => {
       expect(screen.getByAltText('Digital House')).toBeInTheDocument();
+      expect(screen.getByRole('button')).toBeInTheDocument();
+    });
+    it('menu click should show the links and search bar', async () => {
+      const button = screen.getByRole('button');
+      fireEvent.click(button);
       expect(screen.getByText('About')).toBeInTheDocument();
       expect(screen.getByText('Favorites')).toBeInTheDocument();
-      expect(screen.getByRole('form')).toBeInTheDocument();
+      expect(screen.getByText('SearchBar')).toBeInTheDocument();
     });
   });
 });

@@ -13,9 +13,11 @@ const NavMobile = () => {
     <MobileNav active={isOpen}>
       <Container>
         <NavLinks to="/">
-          <Logo src={'/images/logo-dh.png'} />
+          <Logo src={'/images/logo-dh.png'} alt={'Digital House'} />
         </NavLinks>
-        <IconButton onClick={onOpen}>{isOpen ? <FaTimes /> : <FaBars />}</IconButton>
+        <IconButton aria-label="menu-button" onClick={onOpen}>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </IconButton>
       </Container>
       {isOpen && (
         <Container flexDirection="column">

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-const useDisclosure = (initalValue = false) => {
-  const [value, setValue] = useState(initalValue);
+const useDisclosure = (initialValue = false) => {
+  const [value, setValue] = useState(initialValue);
 
   const onOpen = () => setValue((value) => !value);
 
