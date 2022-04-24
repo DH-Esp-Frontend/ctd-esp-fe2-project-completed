@@ -1,45 +1,36 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import { NavMobile } from 'features/navigation/mobile';
-import { MemoryRouter } from 'react-router-dom';
-
-let mockIsOpen = false;
-const mockOnOpen = jest.fn();
-jest.mock('features/modal/useDisclosure', () =>
-  jest.fn(() => ({
-    isOpen: mockIsOpen,
-    onOpen: mockOnOpen
-  }))
-);
+import { useDisclosure } from 'features/modal/index';
+import { renderHook } from '@testing-library/react-hooks';
+import { act } from 'react-dom/test-utils';
 
 describe('useDisclosure', () => {
-  it('onOpen should be call when menu is clicked ', async () => {
-    render(
-      <MemoryRouter initialEntries={[{ pathname: '/' }]}>
-        <NavMobile />
-      </MemoryRouter>
-    );
-    const button = screen.getByLabelText('menu-button');
-    fireEvent.click(button);
-    expect(mockOnOpen).toBeCalled();
+  describe('when set initial value as true', () => {
+    it('should be opened', async () => {
+      const { result } = renderHook(() => useDisclosure(true));
+      expect(result.current.isOpen).toBeTruthy();
+    });
+    describe('when toggle', () => {
+      it('should be closed', async () => {
+        const { result } = renderHook(() => useDisclosure(true));
+        act(() => {
+          result.current.toggle();
+        });
+        expect(result.current.isOpen).toBeFalsy();
+      });
+    });
   });
-  it('should show the modal if isOpen is true', async () => {
-    mockIsOpen = true;
-    render(
-      <MemoryRouter initialEntries={[{ pathname: '/' }]}>
-        <NavMobile />
-      </MemoryRouter>
-    );
-    expect(screen.getByText('About')).toBeInTheDocument();
-    expect(screen.getByText('Favorites')).toBeInTheDocument();
-  });
-  it('should not show the modal if isOpen is false', async () => {
-    mockIsOpen = false;
-    render(
-      <MemoryRouter initialEntries={[{ pathname: '/' }]}>
-        <NavMobile />
-      </MemoryRouter>
-    );
-    expect(screen.queryByText('About')).not.toBeInTheDocument();
-    expect(screen.queryByText('Favorites')).not.toBeInTheDocument();
+  describe('when set initial value as false', () => {
+    it('should be closed', async () => {
+      const { result } = renderHook(() => useDisclosure(false));
+      expect(result.current.isOpen).toBeFalsy();
+    });
+    describe('when toggle', () => {
+      it('should be opened', async () => {
+        const { result } = renderHook(() => useDisclosure(false));
+        act(() => {
+          result.current.toggle();
+        });
+        expect(result.current.isOpen).toBeTruthy();
+      });
+    });
   });
 });

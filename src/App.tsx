@@ -6,20 +6,19 @@ import { store } from './store/store';
 import PaginaDetalle from './pages/Detalle.pagina';
 import PaginaInicio from './pages/Inicio.pagina';
 import { Navbar } from 'features/navigation';
+import { FC } from 'react';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<PaginaInicio />} />
-          <Route path="detalle" element={<PaginaDetalle />} />
-        </Routes>
-      </ThemeProvider>
-    </Provider>
-  );
-}
+const App: FC = () => (
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<PaginaInicio />} />
+        <Route path="detalle" element={<PaginaDetalle />} />
+      </Routes>
+    </ThemeProvider>
+  </Provider>
+);
 
 export default App;

@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 /**
  * Esta es la pagina de about.
  *
@@ -6,7 +8,7 @@
  *
  * @returns la pagina de about
  */
-const PaginaAbout = () => (
+const PaginaAbout: FC = () => (
   <div>
     <h3>Pagina de About</h3>
   </div>

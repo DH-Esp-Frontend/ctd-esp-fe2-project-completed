@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 /**
  * Esta es la pagina de detalle.
  *
@@ -6,7 +8,7 @@
  *
  * @returns la pagina de detalle
  */
-const PaginaDetalle = () => (
+const PaginaDetalle: FC = () => (
   <div>
     <h3>Pagina de Detalle</h3>
   </div>

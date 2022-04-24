@@ -12,7 +12,7 @@ jest.mock('features/search', () => ({
 
 describe('NavDesktop', () => {
   describe('when render default state', () => {
-    it('should have a list of pages and the SearchBar', async () => {
+    it('should have a list of pages', async () => {
       render(
         <MemoryRouter initialEntries={[{ pathname: '/' }]}>
           <NavDesktop />
@@ -20,9 +20,16 @@ describe('NavDesktop', () => {
       );
       //
       expect(screen.getByAltText('Digital House')).toBeInTheDocument();
-      expect(screen.getByText('About')).toBeInTheDocument();
-      expect(screen.getByText('Favorites')).toBeInTheDocument();
-      expect(screen.getByRole('form')).toBeInTheDocument();
+      expect(screen.getByText('Home')).toBeInTheDocument();
+      expect(screen.getByText('Following')).toBeInTheDocument();
+    });
+    it('should render a SearchBar', async () => {
+      render(
+        <MemoryRouter initialEntries={[{ pathname: '/' }]}>
+          <NavDesktop />
+        </MemoryRouter>
+      );
+      expect(screen.getByText('SearchBar')).toBeInTheDocument();
     });
   });
 });

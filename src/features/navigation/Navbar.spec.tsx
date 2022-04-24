@@ -3,7 +3,7 @@ import { Navbar } from 'features/navigation/index';
 
 const mockNavbarDesktop = jest.fn();
 jest.mock('features/navigation/desktop', () => ({
-  NavDesktop: jest.fn((props) => {
+  NavDesktop: jest.fn(() => {
     mockNavbarDesktop();
     return <div>Navbar Desktop</div>;
   })
@@ -23,13 +23,13 @@ describe('Navbar', () => {
       render(<Navbar />);
       //
       expect(screen.getByText('Navbar Desktop')).toBeInTheDocument();
-      // expect(mockNavbarDesktop).toBeCalled();
+      expect(mockNavbarDesktop).toBeCalled();
     });
     it('should have a mobile navbar', async () => {
       render(<Navbar />);
       //
       expect(screen.getByText('Navbar Mobile')).toBeInTheDocument();
-      // expect(mockNavbarMobile).toBeCalled();
+      expect(mockNavbarMobile).toBeCalled();
     });
   });
 });

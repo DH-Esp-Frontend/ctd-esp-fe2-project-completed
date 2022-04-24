@@ -5,9 +5,10 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import useDisclosure from 'features/modal/useDisclosure';
 import { SearchBar } from 'features/search';
 import { Container, IconButton, Logo } from 'features/styles';
+import { FC } from 'react';
 
-const NavMobile = () => {
-  const { isOpen, onOpen } = useDisclosure();
+const NavMobile: FC = () => {
+  const { isOpen, toggle } = useDisclosure();
 
   return (
     <MobileNav active={isOpen}>
@@ -15,18 +16,18 @@ const NavMobile = () => {
         <NavLinks to="/">
           <Logo src={'/images/logo-dh.png'} alt={'Digital House'} />
         </NavLinks>
-        <IconButton aria-label="menu-button" onClick={onOpen}>
+        <IconButton aria-label="menu-button" onClick={toggle}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </IconButton>
       </Container>
       {isOpen && (
         <Container flexDirection="column">
           <Container width="400px" flexDirection="column">
-            <NavLinks to="/about" active="active">
-              <h3>About</h3>
+            <NavLinks to="/" active="active">
+              <h3>Home</h3>
             </NavLinks>
-            <NavLinks to="/favs" active="active">
-              <h3>Favorites</h3>
+            <NavLinks to="/following" active="active">
+              <h3>Following</h3>
             </NavLinks>
           </Container>
           <SearchBar />
