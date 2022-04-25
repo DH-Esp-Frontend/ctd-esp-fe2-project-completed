@@ -16,6 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
+    "paths": {
+      "features/*": ["./features/*"]
+    }
   },
   "include": ["src/**/*", "jest.setupAfterEnv.ts"]
 }

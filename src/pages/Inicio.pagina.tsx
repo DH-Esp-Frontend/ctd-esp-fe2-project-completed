@@ -1,4 +1,5 @@
-import { Title } from '../styles';
+import { Title } from '../features/styles';
+import { FC } from 'react';
 
 /**
  * Esta es la pagina principal.
@@ -8,7 +9,7 @@ import { Title } from '../styles';
  *
  * @returns la pagina de inicio
  */
-const PaginaInicio = () => (
+const PaginaInicio: FC = () => (
   <div>
     <Title>Pagina de Inicio</Title>
   </div>
