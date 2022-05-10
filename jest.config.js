@@ -7,7 +7,9 @@ module.exports = {
   testEnvironment: 'node',
   roots: ['<rootDir>'],
   moduleNameMapper: {
-    '^features/(.*)$': '<rootDir>/src/features/$1'
+    '^features/(.*)$': '<rootDir>/src/features/$1',
+    '^store/(.*)$': '<rootDir>/src/store/$1',
+    '^test/(.*)$': '<rootDir>/src/test/$1'
   },
   testPathIgnorePatterns: ['index.ts'],
   collectCoverageFrom: ['src/features/**/*.ts', 'src/features/**/*.tsx'],

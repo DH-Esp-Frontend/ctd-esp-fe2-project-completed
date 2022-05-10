@@ -17,7 +17,9 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "features/*": ["./features/*"]
+      "features/*": ["./features/*"],
+      "store/*": ["./store/*"],
+      "test/*": ["./test/*"]
     }
   },
   "include": ["src/**/*", "jest.setupAfterEnv.ts"]

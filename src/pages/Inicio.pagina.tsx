@@ -1,5 +1,6 @@
-import { Title } from '../features/styles';
+import { Container } from '../features/styles';
 import { FC } from 'react';
+import { LocationsComponent } from 'features/locations';
 
 /**
  * Esta es la pagina principal.
@@ -11,7 +12,9 @@ import { FC } from 'react';
  */
 const PaginaInicio: FC = () => (
   <div>
-    <Title>Pagina de Inicio</Title>
+    <Container>
+      <LocationsComponent />
+    </Container>
   </div>
 );
 

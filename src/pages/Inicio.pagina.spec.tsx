@@ -1,12 +1,14 @@
 import { render } from '@testing-library/react';
 import InicioPagina from './Inicio.pagina';
+import { renderWithProviders } from '../test/test-utils';
+import { store } from 'store/store';
 
 describe('InicioPagina', () => {
   describe('when render default state', () => {
     it('should have only a button displayed', async () => {
-      const { getByText } = render(<InicioPagina />);
+      const { getByText } = renderWithProviders(<InicioPagina />, { store });
       //
-      expect(getByText('Pagina de Inicio')).toBeInTheDocument();
+      expect(getByText('Cargando ubicaciones interplanetarias...')).toBeInTheDocument();
     });
   });
 });
