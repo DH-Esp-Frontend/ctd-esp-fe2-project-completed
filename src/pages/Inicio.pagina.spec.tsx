@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import InicioPagina from './Inicio.pagina';
 import { renderWithProviders } from '../test/test-utils';
 import { store } from 'store/store';
