@@ -2,7 +2,7 @@ export interface CharacterResult {
   result: ICharacters[];
 }
 
-export type residents = string[];
+export type residentsList = string[];
 export type IDs = string[];
 export interface ICharacters {
   id: string;

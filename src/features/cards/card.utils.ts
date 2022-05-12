@@ -1,6 +1,7 @@
-import { residents, IDs } from 'features/cards';
+import { residentsList, IDs } from 'features/cards';
 
-export const filterIDs = (residents: residents): IDs => {
+//metodo para separar los id correspondientes a la url de cada personaje
+export const filterIDs = (residents: residentsList): IDs => {
   const cutIds = residents.map((resident) => resident.slice(42));
   return cutIds;
 };
