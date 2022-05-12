@@ -1,10 +1,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { charactersApi, charactersReducer } from 'features/cards';
 import { locationReducer, locationsApi } from 'features/locations';
 
 const rootReducer = combineReducers({
   [locationsApi.reducerPath]: locationsApi.reducer,
+  [charactersApi.reducerPath]: charactersApi.reducer,
   //
-  locations: locationReducer
+  locations: locationReducer,
+  characters: charactersReducer
 });
 
 export const store = configureStore({
