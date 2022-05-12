@@ -1,3 +1,3 @@
-import LocationsTable from 'features/locations/table/LocationsTable.component';
+import LocationsTable from 'features/locations/table/locations-table.component';
 
 export { LocationsTable };

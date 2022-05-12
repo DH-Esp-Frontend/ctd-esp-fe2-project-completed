@@ -1,3 +1,3 @@
-import SearchBar from 'features/search/SearchBar';
+import SearchBar from 'features/search/search-bar.component';
 
 export { SearchBar };

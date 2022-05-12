@@ -2,7 +2,7 @@
 import MobileNav from 'features/navigation/mobile/mobile-nav.styles';
 import NavLinks from 'features/navigation/nav-link.styles';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import useDisclosure from 'features/modal/useDisclosure';
+import useDisclosure from 'features/modal/use-disclosure';
 import { SearchBar } from 'features/search';
 import { Container, IconButton, Logo } from 'features/styles';
 import { FC } from 'react';

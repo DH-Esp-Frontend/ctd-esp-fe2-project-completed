@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import NavMobile from './NavMobile';
 import userEvent from '@testing-library/user-event';
+import { NavMobile } from 'features/navigation/mobile/index';
 
 const mockSearchBar = jest.fn();
 jest.mock('features/search', () => ({
