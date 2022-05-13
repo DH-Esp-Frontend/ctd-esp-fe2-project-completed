@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { LocationsTable } from 'features/locations/table/index';
+import userEvent from '@testing-library/user-event';
 
 const data = [
   {
@@ -25,6 +26,11 @@ const data = [
     created: '2017-11-10T13:06:38.182Z'
   }
 ];
+
+const mockUseNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+  useNavigate: () => mockUseNavigate
+}));
 
 describe('LocationsTable', () => {
   describe('when render with no data', () => {
@@ -65,6 +71,13 @@ describe('LocationsTable', () => {
       expect(screen.getByText('Cluster')).toBeInTheDocument();
       expect(screen.getByText('unknown')).toBeInTheDocument();
       expect(screen.getByText('1')).toBeInTheDocument();
+    });
+    describe('when click in an entry row', () => {
+      it('should navigate to that row', async () => {
+        render(<LocationsTable locations={data} />);
+        userEvent.click(screen.getByText('#2'));
+        expect(mockUseNavigate).toBeCalledWith('/location/2');
+      });
     });
   });
 });
