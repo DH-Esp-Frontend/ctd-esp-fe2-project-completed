@@ -8,12 +8,9 @@ interface INavLink {
 const NavLinks = styled(NavLink)<INavLink>`
   text-decoration: none;
   color: #333333;
-  transition: all 0.8s ease;
+  transition: all 0.6s ease;
   &.${(props) => props.active} {
-    color: #8a8a8a;
-  }
-  &:hover {
-    color: #8a8a8a;
+    color: #0a4d9d;
   }
 `;
 

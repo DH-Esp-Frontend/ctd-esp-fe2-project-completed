@@ -1,4 +1,3 @@
-// import icon from '../../assets/logo-dh.png';
 import MobileNav from 'features/navigation/mobile/mobile-nav.styles';
 import NavLinks from 'features/navigation/nav-link.styles';
 import { FaBars, FaTimes } from 'react-icons/fa';

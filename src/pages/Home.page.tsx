@@ -3,14 +3,14 @@ import { FC } from 'react';
 import { LocationsComponent } from 'features/locations';
 
 /**
- * Esta es la pagina principal.
+ * HomePage
  *
- * Uso:
- * ``` <PaginaInicio /> ```
+ * Usage:
+ * ``` <HomePage /> ```
  *
- * @returns la pagina de inicio
+ * @returns the home page
  */
-const PaginaInicio: FC = () => (
+const HomePage: FC = () => (
   <div>
     <Container>
       <LocationsComponent />
@@ -18,4 +18,4 @@ const PaginaInicio: FC = () => (
   </div>
 );
 
-export default PaginaInicio;
+export default HomePage;
