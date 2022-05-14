@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import LocationPage from 'pages/Location.page';
-import { LocationDetailComponentProps } from 'features/locations/detail';
+import { LocationDetailContainerProps } from 'features/locations/detail';
 
 const mockUseNavigate = jest.fn();
 const mockUseParams = jest.fn().mockReturnValue({
@@ -13,7 +13,7 @@ jest.mock('react-router-dom', () => ({
 
 const mockLocationDetailComponent = jest.fn();
 jest.mock('features/locations/detail', () => ({
-  LocationDetailComponent: jest.fn((props: LocationDetailComponentProps) => {
+  LocationDetailContainer: jest.fn((props: LocationDetailContainerProps) => {
     mockLocationDetailComponent(props);
     return <div>Location Detail</div>;
   })

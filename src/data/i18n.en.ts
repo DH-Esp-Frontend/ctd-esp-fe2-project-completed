@@ -1,4 +1,5 @@
 const enTranslations: Record<string, string> = {
+  loading: 'Loading',
   'language.spanish': 'Spanish',
   'language.portuguese': 'Portuguese',
   'language.english': 'English',

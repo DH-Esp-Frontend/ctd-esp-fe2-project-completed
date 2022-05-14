@@ -1,19 +1,16 @@
 import { FC } from 'react';
-import { useGetLocationQuery } from 'features/locations/locations.endpoints';
 import { CharactersComponent } from 'features/characters';
+import { Location } from 'features/locations';
+import { withLoading } from 'features/loading';
 
 export type LocationDetailComponentProps = {
-  id: number;
+  location?: Location;
 };
 
 const LocationDetailComponent: FC<LocationDetailComponentProps> = ({
-  id
+  location
 }: LocationDetailComponentProps) => {
-  const { data: location, error, isLoading } = useGetLocationQuery({ id });
-
-  if (isLoading) return <div>Loading location...</div>;
-  if (error || !location) return <div>Error when loading. Please try again later.</div>;
-
+  if (!location) return <></>;
   const characterIds = location.residents.map((resident) =>
     parseInt(resident.split('character')[1].replace('/', ''), 10)
   );
@@ -29,4 +26,4 @@ const LocationDetailComponent: FC<LocationDetailComponentProps> = ({
   );
 };
 
-export default LocationDetailComponent;
+export default withLoading(LocationDetailComponent);

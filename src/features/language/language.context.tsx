@@ -1,10 +1,5 @@
-import { createContext, FC, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, FC, useContext, useMemo, useState } from 'react';
 import Languages from 'features/language/language.types';
-import i18nEs from 'data/i18n.es';
-import esTranslations from 'data/i18n.es';
-import enTranslations from 'data/i18n.en';
-import ptTranslations from 'data/i18n.pt';
-import languageTypes from 'features/language/language.types';
 import translate from 'features/language/language.services';
 
 export interface LanguageState {
