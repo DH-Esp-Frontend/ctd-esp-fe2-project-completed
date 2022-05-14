@@ -15,12 +15,10 @@ const Pagination: FC<PaginationProps> = ({
   onNextPage
 }: PaginationProps) => {
   const onPrev = () => {
-    if (!pagination.prev) return;
     onPreviousPage();
   };
 
   const onNext = () => {
-    if (!pagination.next) return;
     onNextPage();
   };
 

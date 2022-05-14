@@ -14,9 +14,9 @@ const LocationsComponent: FC = () => {
     isLoading
   } = useGetLocationsQuery({ name: locationsQuery, page });
 
-  if (isLoading) return <div>Cargando ubicaciones interplanetarias...</div>;
+  if (isLoading) return <div>Loading interplanetary locations...</div>;
   if (error || !locations || locations.results.length === 0)
-    return <div>Error al cargar. Intente nuevamente mas tarde.</div>;
+    return <div>Error when loading. Please try again later.</div>;
 
   const onPreviousPage = () => {
     dispatch(previousLocations());

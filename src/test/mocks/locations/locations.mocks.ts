@@ -1,3 +1,13 @@
+export const locationData1Json = {
+  id: 1,
+  name: 'Planet 1',
+  type: 'Planet',
+  dimension: 'Dimension C-137',
+  residents: ['https://rickandmortyapi.com/api/character/38'],
+  url: 'https://rickandmortyapi.com/api/location/1',
+  created: '2017-11-10T12:42:04.162Z'
+};
+
 export const locationDataPage1Json = {
   info: {
     count: 7,

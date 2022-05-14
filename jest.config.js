@@ -8,11 +8,17 @@ module.exports = {
   roots: ['<rootDir>'],
   moduleNameMapper: {
     '^features/(.*)$': '<rootDir>/src/features/$1',
+    '^pages/(.*)$': '<rootDir>/src/pages/$1',
     '^store/(.*)$': '<rootDir>/src/store/$1',
     '^test/(.*)$': '<rootDir>/src/test/$1'
   },
   testPathIgnorePatterns: ['index.ts'],
-  collectCoverageFrom: ['src/features/**/*.ts', 'src/features/**/*.tsx'],
+  collectCoverageFrom: [
+    'src/features/**/*.ts',
+    'src/features/**/*.tsx',
+    'src/pages/**/*.ts',
+    'src/pages/**/*.tsx'
+  ],
   coverageThreshold: {
     global: {
       branches: 70,
