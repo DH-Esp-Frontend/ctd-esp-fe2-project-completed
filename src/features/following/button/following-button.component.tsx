@@ -11,10 +11,11 @@ const FollowingButtonComponent: FC<FollowingButtonProps> = ({
   onToggleFavorite
 }: FollowingButtonProps) => {
   const src = isFav ? '/images/star-filled.png' : '/images/star.png';
+  const alt = isFav ? 'is_favorite' : 'is_not_favorite';
 
   return (
     <FollowingButton onClick={() => onToggleFavorite(!isFav)}>
-      <img src={src} alt={'favorito'} />
+      <img src={src} alt={alt} />
     </FollowingButton>
   );
 };

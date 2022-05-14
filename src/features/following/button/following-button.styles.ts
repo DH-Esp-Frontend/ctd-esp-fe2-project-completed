@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const FollowingButton = styled.div`
+const FollowingButton = styled.button`
   cursor: pointer;
   & img {
     width: 35px;

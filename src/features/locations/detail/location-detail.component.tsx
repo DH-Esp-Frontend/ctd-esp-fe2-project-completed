@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useGetLocationQuery } from 'features/locations/locations.endpoints';
 import CharactersComponent from 'features/characters/characters.component';
 
-type LocationDetailComponentProps = {
+export type LocationDetailComponentProps = {
   id: number;
 };
 
