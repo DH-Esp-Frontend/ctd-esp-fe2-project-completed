@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-const CharacterCard = styled.div`
+const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
 
-  & img {
+export const CardImageWrapper = styled.div`
+  &.img {
     width: 300px;
     height: 300px;
     border-top-left-radius: 5px;
@@ -13,7 +15,7 @@ const CharacterCard = styled.div`
   }
 `;
 
-export const CharacterCardBody = styled.div`
+export const CardBodyWrapper = styled.div`
   padding: 10px;
   border: 1px solid #d0d0d0;
   border-top: 0;
@@ -26,4 +28,4 @@ export const CharacterCardBody = styled.div`
   align-items: center;
 `;
 
-export default CharacterCard;
+export default CardWrapper;

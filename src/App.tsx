@@ -9,20 +9,23 @@ import LocationPage from 'pages/Location.page';
 import { store } from 'store/store';
 import FollowingPage from 'pages/Following.page';
 import { LanguageComponent, LanguageProvider } from 'features/language';
+import { TrackingProvider } from 'features/tracking/tracking.context';
 
 const App: FC = () => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <LanguageProvider>
-        <GlobalStyle />
-        <LanguageComponent />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/location/:id" element={<LocationPage />} />
-          <Route path="/following" element={<FollowingPage />} />
-        </Routes>
-      </LanguageProvider>
+      <TrackingProvider>
+        <LanguageProvider>
+          <GlobalStyle />
+          <LanguageComponent />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/location/:id" element={<LocationPage />} />
+            <Route path="/following" element={<FollowingPage />} />
+          </Routes>
+        </LanguageProvider>
+      </TrackingProvider>
     </ThemeProvider>
   </Provider>
 );

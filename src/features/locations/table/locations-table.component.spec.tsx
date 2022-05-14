@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { LocationsTable } from 'features/locations/table/index';
 import userEvent from '@testing-library/user-event';
+import { TrackingProvider } from 'features/tracking/tracking.context';
 
 const data = [
   {
@@ -35,7 +36,11 @@ jest.mock('react-router-dom', () => ({
 describe('LocationsTable', () => {
   describe('when render with no data', () => {
     it('should display only the headers', async () => {
-      render(<LocationsTable locations={[]} />);
+      render(
+        <TrackingProvider>
+          <LocationsTable locations={[]} />
+        </TrackingProvider>
+      );
       //
       expect(screen.getByText('ID')).toBeInTheDocument();
       expect(screen.getByText('Name')).toBeInTheDocument();
@@ -46,7 +51,11 @@ describe('LocationsTable', () => {
   });
   describe('when render with data', () => {
     it('should display the headers', async () => {
-      render(<LocationsTable locations={[]} />);
+      render(
+        <TrackingProvider>
+          <LocationsTable locations={[]} />
+        </TrackingProvider>
+      );
       //
       expect(screen.getByText('ID')).toBeInTheDocument();
       expect(screen.getByText('Name')).toBeInTheDocument();
@@ -55,7 +64,11 @@ describe('LocationsTable', () => {
       expect(screen.getByText('# of Characters')).toBeInTheDocument();
     });
     it('should display the first entry', async () => {
-      render(<LocationsTable locations={data} />);
+      render(
+        <TrackingProvider>
+          <LocationsTable locations={data} />
+        </TrackingProvider>
+      );
       //
       expect(screen.getByText('#1')).toBeInTheDocument();
       expect(screen.getByText('Earth (C-137)')).toBeInTheDocument();
@@ -64,7 +77,11 @@ describe('LocationsTable', () => {
       expect(screen.getByText('3')).toBeInTheDocument();
     });
     it('should display the second entry', async () => {
-      render(<LocationsTable locations={data} />);
+      render(
+        <TrackingProvider>
+          <LocationsTable locations={data} />
+        </TrackingProvider>
+      );
       //
       expect(screen.getByText('#2')).toBeInTheDocument();
       expect(screen.getByText('Abadango')).toBeInTheDocument();
@@ -74,7 +91,11 @@ describe('LocationsTable', () => {
     });
     describe('when click in an entry row', () => {
       it('should navigate to that row', async () => {
-        render(<LocationsTable locations={data} />);
+        render(
+          <TrackingProvider>
+            <LocationsTable locations={data} />
+          </TrackingProvider>
+        );
         userEvent.click(screen.getByText('#2'));
         expect(mockUseNavigate).toBeCalledWith('/location/2');
       });
