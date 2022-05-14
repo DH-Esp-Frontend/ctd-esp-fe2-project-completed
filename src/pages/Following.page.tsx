@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import { Container } from 'features/styles';
+import { FollowingComponent } from 'features/following';
 
 /**
  * Following page
@@ -9,9 +11,10 @@ import { FC } from 'react';
  * @returns the following page
  */
 const FollowingPage: FC = () => (
-  <div>
-    <h3>Following Page</h3>
-  </div>
+  <Container flexDirection={'column'}>
+    <h2>Following Characters</h2>
+    <FollowingComponent />
+  </Container>
 );
 
 export default FollowingPage;

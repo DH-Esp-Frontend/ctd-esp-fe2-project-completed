@@ -6,7 +6,7 @@ describe('FollowingPage', () => {
     it('should have only a text', async () => {
       const { getByText } = render(<FollowingPage />);
       //
-      expect(getByText('Following Page')).toBeInTheDocument();
+      expect(getByText('Following Characters')).toBeInTheDocument();
     });
   });
 });

@@ -1,10 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { locationReducer, locationsApi } from 'features/locations';
+import { charactersApi } from 'features/characters';
+import { followingReducer } from 'features/following';
 
 const rootReducer = combineReducers({
+  [charactersApi.reducerPath]: charactersApi.reducer,
   [locationsApi.reducerPath]: locationsApi.reducer,
   //
-  locations: locationReducer
+  locations: locationReducer,
+  following: followingReducer
 });
 
 export const store = configureStore({
