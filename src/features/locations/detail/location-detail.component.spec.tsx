@@ -3,7 +3,7 @@ import { store } from 'store/store';
 import { renderWithProviders } from 'test/test-utils';
 import { screen } from '@testing-library/react';
 import { locationsApi } from 'features/locations';
-import LocationDetailComponent from 'features/locations/detail/location-detail.component';
+import { LocationDetailComponent } from 'features/locations/detail/index';
 
 const mockCharactersComponent = jest.fn();
 jest.mock('features/characters', () => {

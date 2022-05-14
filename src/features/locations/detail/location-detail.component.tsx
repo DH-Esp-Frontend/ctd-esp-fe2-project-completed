@@ -23,7 +23,7 @@ const LocationDetailComponent: FC<LocationDetailComponentProps> = ({
       <h2>
         #{location.id} - {location.name}
       </h2>
-      <h4>{location.dimension}</h4>
+      <h3>{location.dimension}</h3>
       <CharactersComponent ids={characterIds} />
     </div>
   );

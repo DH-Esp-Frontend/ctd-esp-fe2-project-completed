@@ -18,6 +18,7 @@
     "baseUrl": "src",
     "paths": {
       "features/*": ["./features/*"],
+      "data/*": ["./data/*"],
       "pages/*": ["./pages/*"],
       "store/*": ["./store/*"],
       "test/*": ["./test/*"]

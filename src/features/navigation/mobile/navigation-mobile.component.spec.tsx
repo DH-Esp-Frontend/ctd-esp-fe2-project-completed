@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import { NavMobile } from 'features/navigation/mobile/index';
+import { LanguageProvider } from 'features/language';
 
 const mockSearchBar = jest.fn();
 jest.mock('features/search', () => ({
@@ -15,9 +16,11 @@ describe('NavMobile', () => {
   describe('when render default state', () => {
     beforeEach(() => {
       render(
-        <MemoryRouter initialEntries={[{ pathname: '/' }]}>
-          <NavMobile />
-        </MemoryRouter>
+        <LanguageProvider>
+          <MemoryRouter initialEntries={[{ pathname: '/' }]}>
+            <NavMobile />
+          </MemoryRouter>
+        </LanguageProvider>
       );
     });
     it('should render the logo and the menu button', async () => {

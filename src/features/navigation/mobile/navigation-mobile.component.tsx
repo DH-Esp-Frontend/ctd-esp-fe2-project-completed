@@ -5,9 +5,11 @@ import useDisclosure from 'features/modal/use-disclosure';
 import { SearchBar } from 'features/search';
 import { Container, IconButton, Logo } from 'features/styles';
 import { FC } from 'react';
+import { useLanguage } from 'features/language';
 
 const NavMobile: FC = () => {
   const { isOpen, toggle } = useDisclosure();
+  const { t } = useLanguage();
 
   return (
     <MobileNav active={isOpen}>
@@ -23,10 +25,10 @@ const NavMobile: FC = () => {
         <Container flexDirection="column">
           <Container width="400px" flexDirection="column">
             <NavLinks to="/" active="active">
-              <h3>Home</h3>
+              <h3>{t('navigation.home')}</h3>
             </NavLinks>
             <NavLinks to="/following" active="active">
-              <h3>Following</h3>
+              <h3>{t('navigation.following')}</h3>
             </NavLinks>
           </Container>
           <SearchBar />
