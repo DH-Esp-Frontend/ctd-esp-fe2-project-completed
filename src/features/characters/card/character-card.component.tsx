@@ -8,7 +8,7 @@ import {
   removeCharacterToFollowingList
 } from 'features/following/following.slices';
 
-type CharacterCardProps = {
+export type CharacterCardProps = {
   character: Character;
 };
 

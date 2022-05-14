@@ -1,6 +1,7 @@
 import Character from './characters.types';
 
 import { charactersApi } from './characters.endpoints';
+import CharactersComponent, { CharactersComponentProps } from './characters.component';
 
-export { charactersApi };
-export type { Character };
+export { CharactersComponent, charactersApi };
+export type { Character, CharactersComponentProps };

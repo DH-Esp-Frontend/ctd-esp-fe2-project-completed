@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import LocationPage from 'pages/Location.page';
 import { LocationDetailComponentProps } from 'features/locations/detail';
 

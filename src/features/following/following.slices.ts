@@ -17,10 +17,16 @@ const followingSlice = createSlice({
     },
     removeCharacterToFollowingList: (state, action: PayloadAction<number>) => {
       state.followingIds = state.followingIds.filter((id) => id !== action.payload);
+    },
+    cleanCharacterFollowingList: (state) => {
+      state.followingIds = [];
     }
   }
 });
-export const { addCharacterToFollowingList, removeCharacterToFollowingList } =
-  followingSlice.actions;
+export const {
+  addCharacterToFollowingList,
+  removeCharacterToFollowingList,
+  cleanCharacterFollowingList
+} = followingSlice.actions;
 
 export default followingSlice.reducer;

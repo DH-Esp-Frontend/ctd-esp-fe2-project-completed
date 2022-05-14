@@ -3,7 +3,7 @@ import CharacterGrid from './characters.styles';
 import { useGetCharactersQuery } from 'features/characters/characters.endpoints';
 import { CharacterCardComponent } from 'features/characters/card';
 
-type CharactersComponentProps = {
+export type CharactersComponentProps = {
   ids: number[];
 };
 
@@ -17,7 +17,9 @@ const CharactersComponent: FC<CharactersComponentProps> = ({ ids }: CharactersCo
   return (
     <CharacterGrid>
       {Array.isArray(characters) &&
-        characters.map((character) => <CharacterCardComponent character={character} />)}
+        characters.map((character) => (
+          <CharacterCardComponent character={character} key={character.id} />
+        ))}
       {character && <CharacterCardComponent character={character} />}
     </CharacterGrid>
   );
