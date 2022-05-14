@@ -8,6 +8,7 @@ module.exports = {
   roots: ['<rootDir>'],
   moduleNameMapper: {
     '^features/(.*)$': '<rootDir>/src/features/$1',
+    '^data/(.*)$': '<rootDir>/src/data/$1',
     '^pages/(.*)$': '<rootDir>/src/pages/$1',
     '^store/(.*)$': '<rootDir>/src/store/$1',
     '^test/(.*)$': '<rootDir>/src/test/$1'
