@@ -1,12 +1,13 @@
 import { Character } from 'features/characters';
 import { FC } from 'react';
-import CharacterCard, { CharacterCardBody } from 'features/characters/card/character-card.styles';
 import { FollowingButtonComponent } from 'features/following/button';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import {
   addCharacterToFollowingList,
   removeCharacterToFollowingList
 } from 'features/following/following.slices';
+import { Card } from 'features/card';
+import CardBody from 'features/card/card-body.component';
 
 export type CharacterCardProps = {
   character: Character;
@@ -24,16 +25,18 @@ const CharacterCardComponent: FC<CharacterCardProps> = ({ character }: Character
     }
   };
   return (
-    <CharacterCard>
-      <img src={character.image} alt={character.name} />
-      <CharacterCardBody>
+    <Card>
+      <Card.Image>
+        <img src={character.image} alt={character.name} />
+      </Card.Image>
+      <CardBody>
         <span>{character.name}</span>
         <FollowingButtonComponent
           isFav={followingIds.indexOf(character.id) >= 0}
           onToggleFavorite={onToggleFavorite}
         />
-      </CharacterCardBody>
-    </CharacterCard>
+      </CardBody>
+    </Card>
   );
 };
 
